@@ -27,7 +27,7 @@ const sendMessage = (clientId, loc, doctorType) => {
   console.log('[SENT] ', msg);
 };
 
-/* send request to server for every {timeout} seconds */
+/* send request to broker for every {timeout} seconds */
 setInterval(() => {
   const loc = ['pineValley', 'grandOak'];
   const doctorType = ['Ophthalmologist', 'Physician', 'Pediatrician'];
@@ -41,5 +41,5 @@ setInterval(() => {
 
 /* listen response */
 sock.on('message', (reply) => {
-  console.log(`[SERVER] ${reply.toString()}`);
+  console.log(`[BROKER] ${reply.toString()}`);
 });
